@@ -40,8 +40,6 @@ graph TB
     end
 
     style Course fill:#ff6b6b,stroke:#c92a2a,color:#fff
-    style A fill:#ff9999,stroke:#c92a2a
-    style B fill:#ff9999,stroke:#c92a2a
 ```
 
 **Problem**: The `Course` class has **two responsibilities**:
@@ -56,11 +54,11 @@ This violates SRP because the class has two reasons to change:
 
 ```mermaid
 graph TB
-    subgraph Course["Course Class<br/>(Data Model)"]
+    subgraph Course["Course Class (Data Model)"]
         A["Responsibility:<br/>Represent Course Data<br/>- id<br/>- name<br/>- category<br/>- description"]
     end
 
-    subgraph Repository["CourseRepository Class<br/>(Persistence)"]
+    subgraph Repository["CourseRepository Class (Persistence)"]
         B["Responsibility:<br/>Manage Data Persistence<br/>- save()<br/>- findById()<br/>- update()<br/>- delete()"]
     end
 
@@ -68,8 +66,6 @@ graph TB
 
     style Course fill:#51cf66,stroke:#2f9e44,color:#fff
     style Repository fill:#51cf66,stroke:#2f9e44,color:#fff
-    style A fill:#69db7c,stroke:#2f9e44
-    style B fill:#69db7c,stroke:#2f9e44
 ```
 
 **Solution**: Separate concerns into different classes:
