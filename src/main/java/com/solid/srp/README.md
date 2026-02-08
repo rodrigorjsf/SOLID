@@ -223,15 +223,15 @@ Database changes → Only modify CourseRepository → Course unchanged → Only 
 
 ## Key Takeaways
 
-| Aspect | Without SRP | With SRP |
-|--------|------------|----------|
-| **Responsibilities per class** | Multiple | One |
-| **Reasons to change** | Multiple | One |
-| **Testability** | Difficult | Easy |
-| **Maintainability** | Hard | Easy |
-| **Coupling** | Tight | Loose |
-| **Code Reuse** | Limited | High |
-| **Clarity** | Ambiguous | Clear |
+| Aspect                         | Without SRP | With SRP |
+|--------------------------------|-------------|----------|
+| **Responsibilities per class** | Multiple    | One      |
+| **Reasons to change**          | Multiple    | One      |
+| **Testability**                | Difficult   | Easy     |
+| **Maintainability**            | Hard        | Easy     |
+| **Coupling**                   | Tight       | Loose    |
+| **Code Reuse**                 | Limited     | High     |
+| **Clarity**                    | Ambiguous   | Clear    |
 
 ## In This Repository
 

@@ -1,10 +1,41 @@
 package com.solid.srp.good;
 
 import com.solid.srp.Category;
-import com.solid.utils.PDO;
+import com.solid.srp.utils.PDO;
 
-class GoodSRP {
+/**
+ * Main class demonstrating proper adherence to the Single Responsibility Principle.
+ *
+ * <p>This example shows how separating concerns between {@link Course} (data representation)
+ * and {@link CourseRepository} (persistence) creates more maintainable, testable, and
+ * flexible code.
+ *
+ * <p><b>Key principle:</b> Each class has a single, well-defined responsibility:
+ * <ul>
+ *   <li><b>Course:</b> Represents course data only</li>
+ *   <li><b>CourseRepository:</b> Handles all database persistence operations</li>
+ * </ul>
+ *
+ * <p>This separation provides:
+ * <ul>
+ *   <li>Better testability (can mock the repository)</li>
+ *   <li>Easier maintenance (changes don't affect other classes)</li>
+ *   <li>Clear responsibilities (each class has one reason to change)</li>
+ *   <li>Loose coupling (Course doesn't know about database)</li>
+ * </ul>
+ *
+ * @see com.solid.srp.bad.BadSRP for a violation example
+ * @see Course for the data representation entity
+ * @see CourseRepository for the persistence handler
+ */
+public class GoodSRP {
 
+  /**
+   * Prints a detailed comparison between bad and good SRP implementations.
+   *
+   * <p>Shows the key differences in responsibilities, design benefits, and why the good
+   * implementation is superior for maintainability and testability.
+   */
   private static void printSRPComparison() {
     System.out.println(
         "\n"
@@ -30,6 +61,24 @@ class GoodSRP {
             + "\n===========================================\n");
   }
 
+  /**
+   * Entry point for the good SRP example.
+   *
+   * <p>Demonstrates the following workflow with proper SRP adherence:
+   *
+   * <ol>
+   *   <li>Initialize database connection</li>
+   *   <li>Create repository for handling persistence</li>
+   *   <li>Create category and course entities</li>
+   *   <li>Use repository to save course (not the entity itself)</li>
+   *   <li>Retrieve course from database</li>
+   *   <li>Update course using repository</li>
+   *   <li>Show comparison between bad and good designs</li>
+   * </ol>
+   *
+   * <p><b>Key observation:</b> The Course class never handles database operations. All
+   * persistence is delegated to CourseRepository. This is clean separation of concerns.
+   */
   void main() {
     System.out.println("=== Good SRP Implementation Example ===\n");
 
